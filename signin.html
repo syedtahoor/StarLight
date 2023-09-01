@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Your Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/chrome-icon.png">
+    <script>
+
+        
+var user1 = localStorage.getItem('user');
+var pass1 = localStorage.getItem('pass');
+
+     function signin(){
+        var sysuser = document.getElementById("name").value;
+        var syspass = document.getElementById("password").value;
+
+        if(sysuser == user1 && syspass == pass1){
+
+            document.getElementById('myform').action = "index.html";
+     
+        }
+        else{
+
+          alert("Your username or password is incorrect!")
+        }
+
+    }
+
+    </script>
+
+</head>
+  <body style="background-color: var(--off-white);">
+    
+    <div class="container justify-content-center">
+
+        <h1 class="text-center animated fadeInUp" style="font-family: 'DM Serif Display', serif; letter-spacing: 2px; color: var(--purple);">Login Your Account:</h1>
+    
+        <form class="row g-3 form-signin animated fadeInUp" style="font-family: 'DM Serif Display', serif;" id="myform">
+           
+            <div class="col-md-12" style="line-height: 35px;">
+                <label for="name" class="form-label fs-5" >Name</label>
+                <br>
+                <input type="text" class="w-100" id="name" required placeholder="Your Name" title="Enter Your Name">
+              </div>         
+            
+            <div class="col-md-12" style="line-height: 35px;">
+              <label for="password" class="form-label fs-5">Password</label>
+              <br>
+              <input type="password" class="w-100" id="password" required placeholder="Your Password">
+            </div>
+            <a href="signup.html" class="mt-4">Create Account?</a>
+
+            <div class="col-12 mt-lg-5">
+              <button type="submit" class="btn-signin fs-5" onclick="signin()">Sign In</button>
+            </div>
+          </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
